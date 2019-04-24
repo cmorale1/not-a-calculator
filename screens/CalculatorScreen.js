@@ -12,6 +12,10 @@ import { CalcDisplay, CalcButton } from './../components';
 
 export default class CalculatorScreen extends React.Component {
 
+    static navigationOptions = {
+        header: null,
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -62,7 +66,14 @@ export default class CalculatorScreen extends React.Component {
 
     onEqualsPress = () => {
         this.calc.equalsPressed();
-        this.setState({ display: this.calc.getMainDisplay() });
+        this.setState({display: this.calc.getMainDisplay()}, function() {
+            if(this.state.display === "8,008,135") {
+                console.log("Pornography unlocked");
+                this.props.navigation.navigate('HiddenHome')
+            } else {
+                console.log("Nothing to see here");
+            }
+        });
     };
 
     onClearPress = () => {
