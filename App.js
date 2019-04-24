@@ -1,12 +1,8 @@
 import React from 'react';
-import HomeScreen from './screens/HomeScreen';
+import CalculatorScreen from './screens/CalculatorScreen';
 
 export default class App extends React.Component {
-  state = {
-    isLoadingComplete: false,
-  };
-
   render() {
-    return <HomeScreen/>
+    return <CalculatorScreen/>
   };
 }
